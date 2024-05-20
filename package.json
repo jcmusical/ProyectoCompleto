@@ -1,8 +1,9 @@
 {
-  "name": "_proyectofrontbackend",
+  "name": "proyectofrontbackend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon ./src/index.js"
   },
