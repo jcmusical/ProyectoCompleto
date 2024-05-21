@@ -33,16 +33,20 @@ app.use(morgan('dev')); //Peticiones y estado
 app.use(express.urlencoded({ extended: false }));   //Decodificar info de la URL se apago (FALSE)
 app.use(express.json());    //Para que le llegue siempre un JSON
 
+
 /* --------------------------------- routes --------------------------------- */
 /* api / req = peticion , res = respuesta */
 app.get('/', (req, res) => {
-    res.json({"message" : "Hola Mundo"})
+    /* ------------------ res.json({"message" : "Hola Mundo"}) ------------------ */
+    res.render('index') /* Renderizado por {{{body}}} y el */
 });
+
 
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname, 'public')))
 
 /* ------------------------------- Run server ------------------------------- */
+/* Tenemos configurado nuestro servidor con nuestro puerto */
 app.listen(app.get('port'), () => {
     console.log('Server listening on port', app.get('port'));
 });
