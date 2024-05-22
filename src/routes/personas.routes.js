@@ -15,4 +15,17 @@ router.get('/list', async(req, res) => {
     }
 });
 
+/* Para borrar registro - Mirar que metodo es , usar en programacion paramtero */
+router.get('/delete/:id', async(req, res)=> {
+    try {
+        //console.log(req.params)
+        // id es arreglo de objetos
+        const {id} = req.params
+        await pool.query('DELETE FROM personas WHERE id = ?', [id]);
+        res.redirect('/list');
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+});
+
 export default router;
