@@ -3,6 +3,9 @@ import pool from "../database.js";
 /** pool viene de databse.js */
 
 const router = Router();
+router.get('/add', (req, res)=>{
+    res.render('personas/add')
+});
 
 router.get('/list', async(req, res) => {
     /* [result] pq array */
